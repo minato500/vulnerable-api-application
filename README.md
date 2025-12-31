@@ -60,11 +60,6 @@ Here in this lab we often change the privileges of the user so we should restart
 docker-compose down -v && docker-compose up -d
 ```
 
-## Disclaimer
-
-This application is provided for educational and authorized testing purposes only. The authors are not responsible for any misuse of this application.
-
-> Note
-> Here the API endpoint are more differ from real world application because the api endpoins are named as easier reference for the beginners
-> In Brute Force attacks make sure the wordlists contains the above credentials
+> Note:
+> In Brute Force attacks make sure the credentials given in application 
 > To remove the data and restart the container `docker-compose down -v && docker-compose up -d`
