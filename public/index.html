@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VulnAPI Lab - API Security Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span>VulnAPI<span class="logo-accent">Lab</span></span>
+            </div>
+            <nav>
+                <a href="#vulnerabilities">Challenges</a>
+                <a href="/api/v1/docs" target="_blank">API Docs</a>
+                <a href="https://github.com/minato500/vulnerable-api-application" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">API Security Training Platform</div>
+        <h1>Basic API Exploitation</h1>
+        <p>Practice real-world API vulnerabilities from the OWASP Top 10 in a safe environment.</p>
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number">14</span>
+                <span class="stat-label">Challenges</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">40+</span>
+                <span class="stat-label">Endpoints</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Categories</span>
+            </div>
+        </div>
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">terminal</span>
+            </div>
+            <div class="terminal-body">
+                <span class="terminal-prompt">$</span>
+                <code>curl http://localhost:8090/api/v1/docs</code>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" id="vulnerabilities">
+        <div class="section-header">
+            <h2 class="section-title">Challenge Catalog</h2>
+            <p class="section-desc">Select a challenge to view exploitation details</p>
+        </div>
+        <div class="cards-grid" id="cardsGrid"></div>
+    </main>
+
+    <section class="credentials-section">
+        <div class="container">
+            <h2 class="section-title">Access Credentials</h2>
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <span class="credential-role user">User</span>
+                    <code>john : password123</code>
+                </div>
+                <div class="credential-card">
+                    <span class="credential-role user">User</span>
+                    <code>jane : jane2023</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built for learning API security. Intentionally vulnerable application</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

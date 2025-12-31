@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8090:8090"
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo:27017/vulnapi
+      - JWT_SECRET=secret123
+      - PORT=8090
+    depends_on:
+      - mongo
+      - mysql
+    networks:
+      - vulnnet
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - vulnnet
+
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vulndb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - vulnnet
+
+volumes:
+  mongo_data:
+  mysql_data:
+
+networks:
+  vulnnet:
+    driver: bridge
